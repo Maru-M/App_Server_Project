@@ -1,0 +1,14 @@
+@startuml
+title Sequence
+participant User
+entity App
+entity DNS
+entity CentOS as Server
+User -> App : Input data
+App -> DNS : DNS request
+App <-- DNS : DNS response
+App -> Server : Data Register API request(POST)
+App <-- Server : Data Register API response
+User <- App : Display result
+
+@enduml
